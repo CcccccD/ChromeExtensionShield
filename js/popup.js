@@ -27,14 +27,12 @@ chrome.storage.local.get(['nameList'], function (result) {
                 newNameList = nameList.filter(iname => iname !== iName);
                 chrome.storage.local.set({ 'nameList': JSON.stringify(newNameList) }, function () {
                         // 这里应该把隐藏的显示出来的，不搞了，刷一下页面吧~
+                        refresh();
                 });
             });
         })
     }
 })
-
-console.log(Array.from($('.main .test')));
-$('.main .test').text('222222222222');
 
 $('#ignoreBtn').click(function () {
     console.log($('#ignoreValue').val());
