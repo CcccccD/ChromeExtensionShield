@@ -1,0 +1,31 @@
+{
+    "name": "不看",
+    "description": "可以在掘金沸点屏蔽一些人",
+    "version": "1.0",
+    "manifest_version": 2,
+    "icons": {
+        "16": "logo.png",
+        "32": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://juejin.cn/pins/*"
+            ],
+            "js": [
+                "lib/jquery-1.10.1.min.js",
+                "js/remove.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
